@@ -1,26 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-double a[3];
-int main()
-{
-    double e;
-    int n,d,t;
-    cin>>n>>e>>d;
-    a[0]=n;
-    a[1]=a[2]=0;
-    while(n--){
-        cin>>t;
-        int s=0;
-        double k;
-        for(int i=0;i<t;++i){
-            cin>>k;
-            if(k<e) ++s;
+char buf[10010];
+int n,d[5];
+vector<string> a,b,c;
+string s = "Are you kidding me? @\/@";
+string ans;
+int main(){
+    gets(buf);
+    puts(buf);
+    for(int i=0,j;buf[i];i+=j){
+        if(buf[i]!='[') {
+            j=1; continue;
         }
-        if(s>t/2){
-            if(t>d) ++a[2];
-            else ++a[1];
-        }
+        string t="";
+        for(j=1;buf[i+j]!=']';++j)
+            t=t+buf[i+j];
+        a.push_back(t);
+        cout<<t<<endl;
     }
-    printf("%.1lf%% %.1lf%%\n",a[1]/a[0]*100.0,a[2]/a[0]*100.0);
-    return 0;
 }
+/**
+[¨r][¨q][o][~\][/~]  [<][>]
+*/
